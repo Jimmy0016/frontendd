@@ -6,7 +6,7 @@ import { FormGroup,FormControl } from '@angular/forms';
 interface Categoria{
   id?:number,
   nombre: string;
-  detalle?: string
+  detalle: string
 }
 @Component({
   selector: 'app-categoria',
@@ -49,6 +49,15 @@ this.categoriaService.funGuardar(this.categoriaForm.value).subscribe(
   console.log(error);
 }
 )
-  }
+}
+editarCategoria(cat:Categoria){
+  this.visible=true
+this.categoriaForm.setValue({nombre: cat.nombre, detalle: cat.detalle})
 
 }
+deleteCategoria(cat:Categoria){
+  
+}
+  }
+
+
